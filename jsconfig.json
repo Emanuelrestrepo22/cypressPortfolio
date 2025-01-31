@@ -2,5 +2,9 @@
     "compilerOptions": {
         "types": ["node","cypress"]
     },
+    "baseUrl": ".",
+    "paths": {
+        "@pages/*": ["cypress/support/pages/*"]
+    },
     "include": ["cypress/**/*.js", "cypress/support/pages/textBox.ts"]
 }

@@ -1,0 +1,5 @@
+{
+    "compilerOpcions": {
+        "types": ["node", "cypress"]
+    }
+}

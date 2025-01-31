@@ -8,7 +8,7 @@ module.exports = defineConfig({
       //set all your critical variables
     },
     specPattern: ['cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'],  // Incluir pruebas principales
-    excludeSpecPattern: ['cypress/e2e/**/*.example.cy.{js,jsx,ts,tsx}'],  // Excluir archivos de ejemplo
+    //excludeSpecPattern: ['cypress/e2e/**/*.example.cy.{js,jsx,ts,tsx}'],  // Excluir archivos de ejemplo
 
    // defaultCommandTimeout: 10000,  // Tiempo máximo para comandos (10 segundos)
    // requestTimeout: 15000,         // Tiempo máximo para peticiones HTTP (15 segundos)

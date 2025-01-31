@@ -1,5 +1,6 @@
 {
-    "compilerOpcions": {
-        "types": ["node", "cypress"]
-    }
+    "compilerOptions": {
+        "types": ["node","cypress"]
+    },
+    "include": ["cypress/**/*.js", "cypress/support/pages/textBox.ts"]
 }

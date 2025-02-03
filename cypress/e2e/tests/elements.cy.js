@@ -12,14 +12,22 @@ describe("TS01 building tests on Elements", () => {
         cy.visit('https://demoqa.com/text-box');
     });
 
-    it.only('TC-01 should submit form successfully with valid dates', () => {
+    it('TC-01 should submit form successfully with valid dates', () => {
         const textBox = new TextBox();
 
-        textBox.fillForm(
+        const formData = textBox.fillForm(
             'Emanuel Restrepo',
             'emares@gmail.com',
             'belgrano, caba',
             'ciudad de buenos aires'
         );
+
+        cy.log('Form Data:', JSON.stringify(formData));
+        console.log('Form Data:', formData);
+        //verify results
+        // Realizar las assertions usando el método `verifyFormOutput`
+        textBox.verifyFormOutput(formData);
+        
+
     });
 });

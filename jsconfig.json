@@ -6,5 +6,5 @@
     "paths": {
         "@pages/*": ["cypress/support/pages/*"]
     },
-    "include": ["cypress/**/*.js", "cypress/support/pages/textBox.ts"]
+    "include": ["cypress/**/*.js", "cypress/support/pages/textBox.js"]
 }

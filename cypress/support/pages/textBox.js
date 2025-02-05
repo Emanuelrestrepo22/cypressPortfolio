@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { faker } from '@faker-js/faker';
 
 class TextBox {
     constructor() {
@@ -14,6 +15,20 @@ class TextBox {
         this.outputEmail = () => cy.get('p#email');
         this.outputCurrentAddress = () => cy.get('p#currentAddress');
         this.outputPermanentAddress = () => cy.get('p#permanentAddress');
+
+        //variables generadas con Faker
+        this.randomName = faker.person.fullName();
+        this.randomEmail = faker.internet.email();
+        this.randomCurrentAddress = faker.location.streetAddress();
+        this.randomPermanentAddress = faker.location.city();
+
+        // contruyendo variables vacias 
+        this.emptyName = "";
+        this.emptyEmail = "";
+        this.emptyCurrentAddress = "";
+        this.emptyPermanentAddress = "";
+
+    
     }
     // Método para completar el formulario
     fillForm(username, email, currentAddress, permanentAddress) {

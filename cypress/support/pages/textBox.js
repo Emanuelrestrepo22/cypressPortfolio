@@ -54,5 +54,8 @@ class TextBox {
         this.outputCurrentAddress().should('contain', expectedData.currentAddress);
         this.outputPermanentAddress().should('contain', expectedData.permanentAddress);
     }
+    verifyOutputEmail(expectedData){
+        this.outputEmail().should('contain', expectedData.email);
+    }
 }
 export default TextBox;

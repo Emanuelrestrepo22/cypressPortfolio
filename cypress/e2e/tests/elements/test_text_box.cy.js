@@ -38,7 +38,8 @@ describe("TS01-01 | ToolsQA | Elements | Text-Box", () => {
             textBox2.emptyCurrentAddress,
             textBox2.emptyPermanentAddress
         );
-        console.log(formEmptyEmail)
-        textBox2.verifyOutputEmail(formEmptyEmail);
+        textBox2.verifyFormOutput({ email: textBox2.randomEmail })
+        console.log(textBox2)
     });
+
 });

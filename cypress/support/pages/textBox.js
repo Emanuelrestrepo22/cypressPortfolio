@@ -49,13 +49,10 @@ class TextBox {
     }
     verifyFormOutput(expectedData) {
         // Assertions para cada campo de salida
-        this.outputName().should('contain', expectedData.username);
-        this.outputEmail().should('contain', expectedData.email);
-        this.outputCurrentAddress().should('contain', expectedData.currentAddress);
-        this.outputPermanentAddress().should('contain', expectedData.permanentAddress);
-    }
-    verifyOutputEmail(expectedData){
-        this.outputEmail().should('contain', expectedData.email);
+        expectedData.username && this.outputName().should('contain', expectedData.username);
+        expectedData.email&& this.outputEmail().should('contain', expectedData.email);
+        expectedData.currentAddress && this.outputCurrentAddress().should('contain', expectedData.currentAddress);
+        expectedData.permanentAddress && this.outputPermanentAddress().should('contain', expectedData.permanentAddress);
     }
 }
 export default TextBox;

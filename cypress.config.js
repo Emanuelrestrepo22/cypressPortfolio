@@ -18,7 +18,7 @@ module.exports = defineConfig({
       'cypress/integration/**/*.test.{js,ts}',
     ],
 
-   // defaultCommandTimeout: 15000
+    defaultCommandTimeout: 15000
     
   },
 });

@@ -57,7 +57,7 @@ class TextBox {
         expectedData.permanentAddress && this.outputPermanentAddress().should('contain', expectedData.permanentAddress);
     }
     //method to verify errorEmail
-    verifyEmailErrorClass(email){
+    verifyEmailErrorClass(_email){
         this.emailInput().should('have.class', 'field-error');
     }
 }

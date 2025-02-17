@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 
 class TextBox {
     constructor() {
+
         // Definición de selectores de entrada
         this.usernameInput = () => cy.get('input[id="userName"]');
         this.emailInput = () => cy.get('#userEmail');
@@ -22,37 +23,42 @@ class TextBox {
         this.randomCurrentAddress = faker.location.streetAddress();
         this.randomPermanentAddress = faker.location.city();
 
-        // contruyendo variables vacias 
+        // bouilding var empty or invalid
         this.emptyName = "";
         this.emptyEmail = "";
         this.emptyCurrentAddress = "";
         this.emptyPermanentAddress = "";
 
-    
+        //invalid var
+        this.invalidEmail = faker.lorem.word() + "@com";
+        this.specialCharacters = faker.string.fromCharacters('!@#$%^&*()_+=-{}[]|:;<>?/~');
+        this.longSpecialCharacters = faker.string.fromCharacters('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+', 1000);
+        this.longestCharacters = faker.string.sample(100);
     }
     // Método para completar el formulario
     fillForm(username, email, currentAddress, permanentAddress) {
-        (username) && this.usernameInput().type(username);
+        (username) && this.usernameInput().type(username, {parseSpecialCharSequences: false});
         (email) && this.emailInput().type(email);
-        (currentAddress) && this.currentAddress().type(currentAddress);
-        (permanentAddress) && this.permanentAddress().type(permanentAddress);
+        (currentAddress) && this.currentAddress().type(currentAddress, {parseSpecialCharSequences: false});
+        (permanentAddress) && this.permanentAddress().type(permanentAddress, {parseSpecialCharSequences: false});
 
         // Hacer clic en el botón "submit"
         this.submitButton().click();
 
-        // Esperar a que los elementos se actualicen
-        cy.wait(1000);  // Ajusta el tiempo según sea necesario
-
-
         // Retornar los valores para las assertions
         return { username, email, currentAddress, permanentAddress };
     }
+    //method to veriry all ours assersions
     verifyFormOutput(expectedData) {
         // Assertions para cada campo de salida
         expectedData.username && this.outputName().should('contain', expectedData.username);
         expectedData.email&& this.outputEmail().should('contain', expectedData.email);
         expectedData.currentAddress && this.outputCurrentAddress().should('contain', expectedData.currentAddress);
         expectedData.permanentAddress && this.outputPermanentAddress().should('contain', expectedData.permanentAddress);
+    }
+    //method to verify errorEmail
+    verifyEmailErrorClass(email){
+        this.emailInput().should('have.class', 'field-error');
     }
 }
 export default TextBox;

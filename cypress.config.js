@@ -17,6 +17,8 @@ module.exports = defineConfig({
       'cypress/e2e/**/*.cy.{js,ts}',
       'cypress/integration/**/*.test.{js,ts}',
     ],
+
+   // defaultCommandTimeout: 15000
     
   },
 });

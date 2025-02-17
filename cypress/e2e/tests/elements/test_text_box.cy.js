@@ -7,11 +7,13 @@ import TextBox from '../../../support/pages_model/textBox';  // Prueba con esta 
  */
 describe("TS01 | ToolsQA | Elements | Text-Box", () => {
     beforeEach("visit TextboxPage", () => {
-        // Capturar excepciones no controladas y evitar que Cypress falle
         cy.on('uncaught:exception', (err, runnable) => {
             // Ignorar errores relacionados con CORS o scripts externos
             return false; 
         });
+        //cy.intercept('GET', '**/*.png', { statusCode: 200, body: '' }); // Bloquea imágenes
+        //cy.intercept('GET', '**/*.css', { statusCode: 200, body: '' }); // Bloquea CSS
+        
 
         // Visitar la página
         cy.visit('https://demoqa.com/text-box', {

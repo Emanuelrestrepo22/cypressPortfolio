@@ -6,6 +6,7 @@ class TextBox {
 
         // Definición de selectores de entrada
         this.usernameInput = () => cy.get('input[id="userName"]');
+        this.usernameInput = () => cy.get('input[id="userName"]').should('be.visible');
         this.emailInput = () => cy.get('#userEmail');
         this.currentAddress = () => cy.get('textarea#currentAddress');
         this.permanentAddress = () => cy.get('textarea#permanentAddress');

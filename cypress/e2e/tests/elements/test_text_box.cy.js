@@ -18,8 +18,8 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
            // failOnStatusCode: false
         });
     });
-        /*
-    it('TC-01 should submit form successfully with valid dates', () => {
+
+    it('TC-01 should submit form filling all inputs successfully with valid dates', () => {
         const tc1 = new TextBox();
 
         const formData = tc1.fillForm(
@@ -28,11 +28,10 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
             tc1.randomCurrentAddress,
             tc1.randomPermanentAddress
         );
-        // Realizar las assertions usando el método `verifyFormOutput`
         tc1.verifyFormOutput(formData);
     });
     
-    it('TC-02- should submit form just fill valid email', ()=>{
+    it('TC-02- should submit form filling just valid email', ()=>{
         const tc2 = new TextBox()
         const fillEmail = tc2.fillForm(
             tc2.emptyName,
@@ -42,7 +41,7 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
         );
         tc2.verifyFormOutput(fillEmail.email)
     });
-    it('TC-03 should submit form just fill input full name', ()=> {
+    it('TC-03 should submit form just filling input full name', ()=> {
         const tc3 = new TextBox;
         const fillFullname = tc3.fillForm(
             tc3.randomName,
@@ -53,7 +52,7 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
         tc3.verifyFormOutput(fillFullname.username)
         });
             
-        it('TC-04 should submit form with just empty email', ()=> {
+        it('TC-04 should submit form fill just empty email', ()=> {
             const tc4 = new TextBox;
             const fillWithoutEmail = tc4.fillForm(
                 tc4.randomName,
@@ -63,7 +62,7 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
             );
             tc4.verifyFormOutput(fillWithoutEmail)
             });
-            */
+            
             it('TC-05 should submit with Excessively long data in inputs ', ()=> {
                 const tc5 = new TextBox();
                 const fillLongestData = tc5.fillForm(
@@ -73,8 +72,7 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
                     tc5.longestCharacters
                 );
                 tc5.verifyFormOutput(fillLongestData)
-                });
-                /*
+                }); 
                 it('TC-06 should submit with special characters data in inputs ', ()=> {
                     const tc6 = new TextBox;
                     const fillSpecialCharacters = tc6.fillForm(
@@ -84,7 +82,8 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
                         tc6.longestCharacters
                     );
                     tc6.verifyFormOutput(fillSpecialCharacters)
-                    });
+                    }); 
+                    
 
                     it('TC-07- should not submit form with invalid email', ()=>{
                         const tc7 = new TextBox()
@@ -95,6 +94,6 @@ describe("TS01 | ToolsQA | Elements | Text-Box", () => {
                             tc7.emptyPermanentAddress
                         );
                         tc7.verifyEmailErrorClass();
-                    }); */
+                    }); 
 
 });

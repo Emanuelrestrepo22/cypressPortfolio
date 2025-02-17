@@ -31,7 +31,7 @@ class TextBox {
 
         //invalid var
         this.invalidEmail = faker.lorem.word() + "@com";
-        this.specialCharacters = faker.string.fromCharacters('!@#$%^&*()_+=-{}[]|:;<>?/~');
+        this.specialCharacters = faker.string.fromCharacters('097235807570952752jksvbkvsbjkvs!@#$%^&*()_+=-|:;<>?/~');
         this.longSpecialCharacters = faker.string.fromCharacters('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+', 1000);
         this.longestCharacters = faker.string.sample(100);
     }
